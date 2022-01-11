@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/aop
+                           http://www.springframework.org/schema/aop/spring-aop.xsd">
+        <context:component-scan base-package="com.gec.aop.*"/>
+
+        <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+
+        <aop:config>
+            <aop:pointcut id="p" expression="execution(* com.gec.aop.entity.User.add(..))"/>
+            <aop:aspect ref="userProxy" order="1">
+                <aop:before method="before" pointcut-ref="p"/>
+                <aop:after method="after" pointcut-ref="p"/>
+                <aop:around method="around" pointcut-ref="p"/>
+                <aop:after-returning method="afterReturning" pointcut-ref="p"/>
+                <aop:after-throwing method="afterThrowing" pointcut-ref="p"/>
+            </aop:aspect>
+        </aop:config>
+
+        <bean id="user" class="com.gec.aop.entity.User"></bean>
+
+        <bean id="userProxy" class="com.gec.aop.proxy.UserProxy"></bean>
+</beans>

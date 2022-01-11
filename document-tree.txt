@@ -1,0 +1,40 @@
+卷 Document 的文件夹 PATH 列表
+卷序列号为 D4C4-3D03
+F:.
+│  document-tree.txt
+│  spring5-aop.iml
+│  
+├─lib
+│      com.springsource.net.sf.cglib-2.2.0.jar
+│      com.springsource.org.aopalliance-1.0.0.jar
+│      com.springsource.org.aspectj.weaver-1.6.8.RELEASE.jar
+│      commons-logging-1.2.jar
+│      lombok.jar
+│      spring-aop-5.2.6.RELEASE.jar
+│      spring-aspects-5.2.6.RELEASE.jar
+│      spring-beans-5.2.6.RELEASE.jar
+│      spring-context-5.2.6.RELEASE.jar
+│      spring-core-5.2.6.RELEASE.jar
+│      spring-expression-5.2.6.RELEASE.jar
+│      
+└─src
+    │  application.xml
+    │  
+    └─com
+        └─gec
+            └─aop
+                ├─config
+                │      SpringConfig.java
+                │      
+                ├─entity
+                │      User.java
+                │      
+                ├─proxy
+                │      PersioniProxy.java
+                │      UserProxy.java
+                │      
+                ├─service
+                │  └─impl
+                └─test
+                        AopTest.java
+                        
